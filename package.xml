@@ -10,10 +10,10 @@
   <email>kjdev@php.net</email>
   <active>yes</active>
  </lead>
- <date>2026-06-05</date>
+ <date>2026-07-02</date>
  <version>
-  <release>0.19.0</release>
-  <api>0.19.0</api>
+  <release>0.20.0</release>
+  <api>0.20.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -21,14 +21,9 @@
  </stability>
  <license>MIT</license>
  <notes>
-- add: configurable compression level for the APCu serializer (brotli.apcu_compression_level)
-- fix: SIGSEGV in the APCu serializer callbacks on ZTS shared builds
-- fix: CG(empty_string) crash in the smart_str_extract() fallback on PHP 7.1 ZTS
-- fix: heap-buffer-overflow in php_brotli_decompress_read() inner read
-- fix: heap-use-after-free in php_brotli_decompress_read()
-- fix: propagate failure of brotli_uncompress_add() to the caller
-- fix: UBSAN-detected undefined behavior in brotli_uncompress_add()
-- fix: build on PHP 8.6+
+- add: MIME type exclusions for transparent output compression (brotli.output_compression_exclude_types)
+- add: --enable-apcu configure option to explicitly control APCu serializer support
+- fix: enhance APCu include detection for in-tree builds
  </notes>
  <contents>
   <dir name="/">
@@ -184,6 +179,10 @@
    <file name="tests/ob_dcb_003.phpt" role="test" />
    <file name="tests/ob_dcb_004.phpt" role="test" />
    <file name="tests/ob_dcb_005.phpt" role="test" />
+   <file name="tests/ob_exclude_001.phpt" role="test" />
+   <file name="tests/ob_exclude_002.phpt" role="test" />
+   <file name="tests/ob_exclude_003.phpt" role="test" />
+   <file name="tests/ob_exclude_099.phpt" role="test" />
    <file name="tests/roundtrip.phpt" role="test" />
    <file name="tests/streams_001.phpt" role="test" />
    <file name="tests/streams_002.phpt" role="test" />
